@@ -3,10 +3,10 @@ const app = express();
 const expressJsx = require('./express-jsx');
 
 app.engine('jsx', expressJsx);
-app.set('views', 'views');
+app.set('views', './views');
 app.set('view engine', 'jsx');
 
-app.get('/', () => {
+app.get('/', (req, res) => {
   res.render('index', { hello: 'hola', world: 'mundo' })
 });
 
