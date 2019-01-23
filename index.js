@@ -13,7 +13,10 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// Get the products
 app.use('/products', productsRouter);
+
+// Endpoints to use the api
 app.use('/api/products', productsApiRouter);
 
 const PORT = process.env.PORT || 3001;
